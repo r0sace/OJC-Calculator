@@ -1,3 +1,4 @@
+
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSpinBox
 from PyQt5.QtGui import QFont, QFontDatabase, QIntValidator, QPixmap
