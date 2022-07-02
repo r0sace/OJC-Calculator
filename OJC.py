@@ -29,9 +29,9 @@ class OjcCalculator(QMainWindow):
         self.total_corn_jalapenos = 0
         self.total_guac_jalapenos = 0
 
-        QFontDatabase.addApplicationFont("Gotham Bold.otf")
-        QFontDatabase.addApplicationFont("Gotham Medium.otf")
-        QFontDatabase.addApplicationFont("Gotham Book.otf")
+        QFontDatabase.addApplicationFont("Fonts/Gotham Bold.otf")
+        QFontDatabase.addApplicationFont("Fonts/Gotham Medium.otf")
+        QFontDatabase.addApplicationFont("Fonts/Gotham Book.otf")
 
         self._set_images()
         self._set_header_labels()
@@ -54,14 +54,7 @@ class OjcCalculator(QMainWindow):
             return db.font("Gotham", "Medium", 17)
 
     def _set_images(self):
-        # insert
-        logo = QPixmap('chippie.svg')
-        logo_label = QtWidgets.QLabel(self)
-        logo_label.setPixmap(logo)
-        logo_label.adjustSize()
-        logo_label.move(15, 15)
-
-        box_pattern = QPixmap('pepper-background.png')
+        box_pattern = QPixmap('Images/spin-box-background.png')
         img_y_axis = 193
 
         for i in range(5):
@@ -74,7 +67,7 @@ class OjcCalculator(QMainWindow):
         medium = self._get_font("medium")
 
 
-        total_pattern = QPixmap('total-pattern.png')
+        total_pattern = QPixmap('Images/pattern.svg')
         self.total_label = QtWidgets.QLabel(self)
         self.total_label.setPixmap(total_pattern)
         self.total_label.setGeometry(80, 515, 560, 115)
