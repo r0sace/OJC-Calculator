@@ -95,11 +95,11 @@ class OjcCalculator(QMainWindow):
 
         body_font = self._get_font("book")
 
-        top_headers = ["Ingredient", "Needs", "Onions", "Jalapenos", "Cilantro"]
-        x_axis = 80
+        top_headers = ["Prep Item", "Needs", "Onions", "Jalapenos", "Cilantro"]
+        x_axis = 84
 
         for header in top_headers:
-            if header == "Ingredient" or header == "Needs":
+            if header == "Prep Item" or header == "Needs":
                 top_header = QtWidgets.QLabel(self)
                 top_header.setText(u"\u2009" + header + u"\u2009")
                 top_header.setFont(body_font)
@@ -108,7 +108,7 @@ class OjcCalculator(QMainWindow):
                 top_header.move(x_axis, 150)
                 top_header.setContentsMargins(0,4,0,2)
                 top_header.adjustSize()
-                x_axis += 125
+                x_axis += 121
             elif header == "Onions":
                 top_header = QtWidgets.QLabel(self)
                 top_header.setText(u"\u2009" + header + u"\u2009")
