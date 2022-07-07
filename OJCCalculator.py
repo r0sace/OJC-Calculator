@@ -1,7 +1,14 @@
+# Author: Cristina Rosace
+# Date: 6/6/2022
+# Description: This program implements the OJC Calculator for Chipotle employees. Users update the needs section
+# of each item with the amount their prep sheet is calling for. The OJC calculates and displays a break down
+# of the amount of onions, jalapenos, and cilantro needed for each prep item. The OJC also displays the full amount
+# of onions, jalapenos, and cilantro needed for prep that day. Goodbye over-prepping!
 
-from PyQt5 import QtWidgets, QtCore
+from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSpinBox, QDesktopWidget
 from PyQt5.QtGui import QFontDatabase, QPixmap
+import image_file
 import sys
 
 
@@ -13,6 +20,7 @@ class OjcUi(QMainWindow):
         """Initializes the GUI."""
         self.setWindowTitle("Onion, Jalapeno, Cilantro Calculator")
         self.setStyleSheet("QMainWindow {background-color: #441501}")
+        self.setWindowIcon(QtGui.QIcon(':/ojc_icon.png'))
         self.setFixedSize(725, 700)
 
         QFontDatabase.addApplicationFont("Fonts/Gotham Bold.otf")
@@ -65,6 +73,8 @@ class OjcUi(QMainWindow):
         self.total_label.setPixmap(total_pattern)
         self.total_label.setGeometry(80, 515, 560, 115)
         self.total_label.setStyleSheet("border: 1px solid #AB2218;")
+
+
 
 
     def _create_header_labels(self):
