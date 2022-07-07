@@ -1,14 +1,19 @@
 # Author: Cristina Rosace
 # Date: 6/6/2022
-# Description: This program implements the OJC Calculator for Chipotle employees. Users update the needs section
-# of each item with the amount their prep sheet is calling for. The OJC calculates and displays a break down
-# of the amount of onions, jalapenos, and cilantro needed for each prep item. The OJC also displays the full amount
-# of onions, jalapenos, and cilantro needed for prep that day. Goodbye over-prepping!
+# Description: This program implements the OJC Calculator for Chipotle employees. Users update the
+# needs section of each item with the amount their prep sheet is calling for. The OJC calculates and
+# displays a break down of the amount of onions, jalapenos, and cilantro needed for each prep item.
+# The OJC also displays the full amount of onions, jalapenos, and cilantro needed for prep that day.
+# Goodbye over-prepping!
 
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSpinBox, QDesktopWidget
 from PyQt5.QtGui import QFontDatabase, QPixmap
-import image_file
+import PIL.Image as Image
+from PIL import ImageQt
+import io
+import base64
+from pic2str import pattern_byte_data, spin_box_byte_data
 import sys
 
 
@@ -57,25 +62,33 @@ class OjcUi(QMainWindow):
 
     def _set_images(self):
         """Displays the spinbox background image and total box background image."""
-        box_pattern = QPixmap('spin-box-background.png')
+
+        # convert base64 to QPixmap
+        b = base64.b64decode(spin_box_byte_data)
+        spin_box_pattern = Image.open(io.BytesIO(b))
+        qImage = ImageQt.ImageQt(spin_box_pattern)
+        spin_box_pattern = QPixmap.fromImage(qImage)
+
         img_y_axis = 193
 
         # display each spinbox background
         for i in range(5):
             box_label = QtWidgets.QLabel(self)
-            box_label.setPixmap(box_pattern)
+            box_label.setPixmap(spin_box_pattern)
             box_label.setGeometry(206, img_y_axis, 60, 18)
             img_y_axis += 50
 
+        # dconvert base64 to QPixmap
+        b = base64.b64decode(pattern_byte_data)
+        total_pattern = Image.open(io.BytesIO(b))
+        qImage = ImageQt.ImageQt(total_pattern)
+        total_pattern = QPixmap.fromImage(qImage)
+
         # display total box background
-        total_pattern = QPixmap('pattern.svg')
         self.total_label = QtWidgets.QLabel(self)
         self.total_label.setPixmap(total_pattern)
         self.total_label.setGeometry(80, 515, 560, 115)
         self.total_label.setStyleSheet("border: 1px solid #AB2218;")
-
-
-
 
     def _create_header_labels(self):
         """Creates, styles, and places all header text including the title and total."""
@@ -346,7 +359,7 @@ class OjcUi(QMainWindow):
         self.brown_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.brown_cilantro.move(570, 192)
         self.brown_cilantro.setStyleSheet("color: white;"
-                                     "font-size: 16pt;")
+                                          "font-size: 16pt;")
 
         # white rice cilantro results
         self.white_cilantro = QtWidgets.QLabel(self)
@@ -357,7 +370,7 @@ class OjcUi(QMainWindow):
         self.white_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.white_cilantro.move(570, 243)
         self.white_cilantro.setStyleSheet("color: white;"
-                                     "font-size: 16pt;")
+                                          "font-size: 16pt;")
 
         # mild salsa cilantro results
         self.mild_cilantro = QtWidgets.QLabel(self)
@@ -368,7 +381,7 @@ class OjcUi(QMainWindow):
         self.mild_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.mild_cilantro.move(570, 294)
         self.mild_cilantro.setStyleSheet("color: white;"
-                                    "font-size: 16pt;")
+                                         "font-size: 16pt;")
 
         # corn salsa cilantro results
         self.corn_cilantro = QtWidgets.QLabel(self)
@@ -379,7 +392,7 @@ class OjcUi(QMainWindow):
         self.corn_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.corn_cilantro.move(570, 345)
         self.corn_cilantro.setStyleSheet("color: white;"
-                                    "font-size: 16pt;")
+                                         "font-size: 16pt;")
 
         # guacamole cilantro results
         self.guac_cilantro = QtWidgets.QLabel(self)
@@ -390,7 +403,7 @@ class OjcUi(QMainWindow):
         self.guac_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.guac_cilantro.move(570, 396)
         self.guac_cilantro.setStyleSheet("color: white;"
-                                    "font-size: 16pt;")
+                                         "font-size: 16pt;")
 
     def _create_total_labels(self):
         """Creates, styles, and places the labels inside of the total box."""
@@ -401,7 +414,7 @@ class OjcUi(QMainWindow):
         onion_total_header = QtWidgets.QLabel(self)
         onion_total_header.setFont(bold)
         onion_total_header.setStyleSheet("color: #AB2218;"
-                                              "font-size:18pt;")
+                                         "font-size:18pt;")
         onion_total_header.setAlignment(QtCore.Qt.AlignRight)
         onion_total_header.setText("O N I O N S")
         onion_total_header.adjustSize()
@@ -411,7 +424,7 @@ class OjcUi(QMainWindow):
         jalapenos_total_header = QtWidgets.QLabel(self)
         jalapenos_total_header.setFont(bold)
         jalapenos_total_header.setStyleSheet("color: #AB2218;"
-                                                  "font-size: 18pt;")
+                                             "font-size: 18pt;")
         jalapenos_total_header.setAlignment(QtCore.Qt.AlignRight)
         jalapenos_total_header.setText("J A L A P E N O S")
         jalapenos_total_header.adjustSize()
@@ -421,7 +434,7 @@ class OjcUi(QMainWindow):
         cilantro_total_header = QtWidgets.QLabel(self)
         cilantro_total_header.setFont(bold)
         cilantro_total_header.setStyleSheet("color: #AB2218;"
-                                                 "font-size: 18pt;")
+                                            "font-size: 18pt;")
         cilantro_total_header.setAlignment(QtCore.Qt.AlignRight)
         cilantro_total_header.setText("C I L A N T R O")
         cilantro_total_header.adjustSize()
@@ -462,7 +475,7 @@ class OjcUi(QMainWindow):
         onion_lbs = QtWidgets.QLabel(self)
         onion_lbs.setFont(book)
         onion_lbs.setStyleSheet("color: black;"
-                                     "font-size: 14pt;")
+                                "font-size: 14pt;")
         onion_lbs.setText("p  o  u  n  d  s")
         onion_lbs.adjustSize()
         onion_lbs.move(110, 603)
@@ -471,7 +484,7 @@ class OjcUi(QMainWindow):
         jalapeno_lbs = QtWidgets.QLabel(self)
         jalapeno_lbs.setFont(book)
         jalapeno_lbs.setStyleSheet("color: black;"
-                                        "font-size: 14pt;")
+                                   "font-size: 14pt;")
         jalapeno_lbs.setText("p    o    u    n    d    s")
         jalapeno_lbs.adjustSize()
         jalapeno_lbs.move(280, 603)
@@ -480,7 +493,7 @@ class OjcUi(QMainWindow):
         cilantro_lbs = QtWidgets.QLabel(self)
         cilantro_lbs.setFont(book)
         cilantro_lbs.setStyleSheet("color: black;"
-                                        "font-size: 14pt;")
+                                   "font-size: 14pt;")
         cilantro_lbs.setText("b       a       g       s")
         cilantro_lbs.adjustSize()
         cilantro_lbs.move(487, 603)
@@ -693,6 +706,7 @@ class OjcCalcModel:
 
 class OjcCalcCtrl(OjcCalcModel):
     """OJC Calculator's Controller. Connects the spin box changes to the model for updates."""
+
     def __init__(self, view):
         """Controller initializer, connects to the view GUI."""
         super().__init__(view)
