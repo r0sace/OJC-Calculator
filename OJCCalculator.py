@@ -7,14 +7,23 @@
 # Goodbye over-prepping!
 
 from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5.QtCore import QDir
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSpinBox, QDesktopWidget
 from PyQt5.QtGui import QFontDatabase, QPixmap
 import PIL.Image as Image
 from PIL import ImageQt
 import io
 import base64
+import os
+from pathlib import Path
 from pic2str import pattern_byte_data, spin_box_byte_data
 import sys
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirnamenice(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 
 
 class OjcUi(QMainWindow):
@@ -28,9 +37,9 @@ class OjcUi(QMainWindow):
         self.setWindowIcon(QtGui.QIcon(':/ojc_icon.png'))
         self.setFixedSize(725, 700)
 
-        QFontDatabase.addApplicationFont("Fonts/Gotham Bold.otf")
-        QFontDatabase.addApplicationFont("Fonts/Gotham Medium.otf")
-        QFontDatabase.addApplicationFont("Fonts/Gotham Book.otf")
+        QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Bold.otf"))
+        QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Medium.otf"))
+        QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Book.otf"))
 
         self._center_on_screen()
         self._set_images()
@@ -100,8 +109,8 @@ class OjcUi(QMainWindow):
         # create, style, and place the title
         title_label = QtWidgets.QLabel(self)
         title_label.setText("O J C   C A L C U L A T O R")
-        title_label.setFont(title_font)
-        title_label.setStyleSheet("color: white")
+        title_label.setFont(medium)
+        title_label.setStyleSheet("color: white; font-size:42pt;")
         title_label.adjustSize()
         title_label.move(75, 57)
 
