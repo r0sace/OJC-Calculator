@@ -7,7 +7,6 @@
 # Goodbye over-prepping!
 
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtCore import QDir
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSpinBox, QDesktopWidget
 from PyQt5.QtGui import QFontDatabase, QPixmap, QFont
 import PIL.Image as Image
@@ -15,7 +14,6 @@ from PIL import ImageQt
 import io
 import base64
 import os
-from pathlib import Path
 from pic2str import pattern_byte_data, spin_box_byte_data
 import sys
 
@@ -37,9 +35,9 @@ class OjcUi(QMainWindow):
         self.setWindowIcon(QtGui.QIcon(':/ojc_icon.png'))
         self.setFixedSize(725, 700)
 
-        QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Bold.otf"))
-        QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Medium.otf"))
-        QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Book.otf"))
+        QFontDatabase.addApplicationFont(resource_path("gotham fonts/Gotham Bold.otf"))
+        QFontDatabase.addApplicationFont(resource_path("gotham fonts/Gotham Medium.otf"))
+        QFontDatabase.addApplicationFont(resource_path("gotham fonts/Gotham Book.otf"))
 
         gotham = QFont("Gotham")
         gotham.setHintingPreference(QFont.HintingPreference.PreferNoHinting)
@@ -105,7 +103,7 @@ class OjcUi(QMainWindow):
 
     def _create_header_labels(self):
         """Creates, styles, and places all header text including the title and total."""
-        # get fonts needed for each header
+        # get gotham fonts needed for each header
         title_font = self._get_font("bold")
         body_font = self._get_font("book")
         medium = self._get_font("medium")
