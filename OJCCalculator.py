@@ -9,7 +9,7 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import QDir
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSpinBox, QDesktopWidget
-from PyQt5.QtGui import QFontDatabase, QPixmap
+from PyQt5.QtGui import QFontDatabase, QPixmap, QFont
 import PIL.Image as Image
 from PIL import ImageQt
 import io
@@ -40,6 +40,10 @@ class OjcUi(QMainWindow):
         QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Bold.otf"))
         QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Medium.otf"))
         QFontDatabase.addApplicationFont(resource_path("fonts/Gotham Book.otf"))
+
+        gotham = QFont("Gotham")
+        gotham.setHintingPreference(QFont.HintingPreference.PreferNoHinting)
+        QApplication.setFont(gotham)
 
         self._center_on_screen()
         self._set_images()
@@ -87,7 +91,7 @@ class OjcUi(QMainWindow):
             box_label.setGeometry(206, img_y_axis, 60, 18)
             img_y_axis += 50
 
-        # dconvert base64 to QPixmap
+        # convert base64 to QPixmap
         b = base64.b64decode(pattern_byte_data)
         total_pattern = Image.open(io.BytesIO(b))
         qImage = ImageQt.ImageQt(total_pattern)
@@ -110,7 +114,7 @@ class OjcUi(QMainWindow):
         title_label = QtWidgets.QLabel(self)
         title_label.setText("O J C   C A L C U L A T O R")
         title_label.setFont(medium)
-        title_label.setStyleSheet("color: white; font-size:42pt;")
+        title_label.setStyleSheet("color: white; font-size:42px;")
         title_label.adjustSize()
         title_label.move(75, 57)
 
@@ -124,7 +128,8 @@ class OjcUi(QMainWindow):
                 top_header.setText(u"\u2009" + header + u"\u2009")
                 top_header.setFont(body_font)
                 top_header.setStyleSheet("color: white;"
-                                         "background-color: #AB2218;")
+                                         "background-color: #AB2218;"
+                                         "font-size: 18px;")
                 top_header.move(x_axis, 150)
                 top_header.setContentsMargins(0, 4, 0, 2)
                 top_header.adjustSize()
@@ -134,7 +139,8 @@ class OjcUi(QMainWindow):
                 top_header.setText(u"\u2009" + header + u"\u2009")
                 top_header.setFont(body_font)
                 top_header.setStyleSheet("color: white;"
-                                         "background-color: #AB2218;")
+                                         "background-color: #AB2218;"
+                                         "font-size: 18px;")
                 top_header.move(350, 150)
                 top_header.setContentsMargins(0, 4, 0, 2)
                 top_header.adjustSize()
@@ -145,7 +151,8 @@ class OjcUi(QMainWindow):
                 top_header.adjustSize()
                 top_header.setFont(body_font)
                 top_header.setStyleSheet("color: white;"
-                                         "background-color: #AB2218;")
+                                         "background-color: #AB2218;"
+                                         "font-size: 18px;")
                 top_header.move(x_axis, 150)
                 top_header.setContentsMargins(0, 4, 0, 2)
                 top_header.adjustSize()
@@ -157,7 +164,7 @@ class OjcUi(QMainWindow):
         total_text.setText(("T O T A L   I N G R E D I E N T S"))
         total_text.setStyleSheet("color: white;"
                                  "background-color: transparent;"
-                                 "font-size: 24pt")
+                                 "font-size: 24px")
         total_text.move(170, 470)
         total_text.adjustSize()
 
@@ -173,7 +180,8 @@ class OjcUi(QMainWindow):
             label.setFixedSize(100, 20)
             label.setAlignment(QtCore.Qt.AlignRight)
             label.setFont(item_font)
-            label.setStyleSheet("color: white;")
+            label.setStyleSheet("color: white;"
+                                "font-size: 17px")
             label.move(78, y_axis)
             y_axis += 50
 
@@ -186,7 +194,7 @@ class OjcUi(QMainWindow):
         copyright.setFont(cc_font)
         copyright.move(298, 680)
         copyright.adjustSize()
-        copyright.setStyleSheet("font-size: 10pt;"
+        copyright.setStyleSheet("font-size: 10px;"
                                 "color:grey")
 
     def _create_spin_boxes(self):
@@ -202,6 +210,9 @@ class OjcUi(QMainWindow):
 
         # brown rice spin box
         self.brown_rice = QSpinBox(self)
+        font = self.brown_rice.font()
+        font.setPixelSize(12)
+        self.brown_rice.setFont(font)
         self.brown_rice.setStyleSheet(stylesheet)
         self.brown_rice.setAlignment(QtCore.Qt.AlignRight)
         self.brown_rice.setGeometry(206, 193, 60, 18)
@@ -209,6 +220,9 @@ class OjcUi(QMainWindow):
 
         # white rice spin box
         self.white_rice = QSpinBox(self)
+        font = self.white_rice.font()
+        font.setPixelSize(12)
+        self.white_rice.setFont(font)
         self.white_rice.setStyleSheet(stylesheet)
         self.white_rice.setAlignment(QtCore.Qt.AlignRight)
         self.white_rice.setGeometry(206, 243, 60, 18)
@@ -216,6 +230,9 @@ class OjcUi(QMainWindow):
 
         # mild spin box
         self.mild = QSpinBox(self)
+        font = self.mild.font()
+        font.setPixelSize(12)
+        self.mild.setFont(font)
         self.mild.setStyleSheet(stylesheet)
         self.mild.setAlignment(QtCore.Qt.AlignRight)
         self.mild.setGeometry(206, 293, 60, 18)
@@ -223,6 +240,9 @@ class OjcUi(QMainWindow):
 
         # corn spin box
         self.corn = QSpinBox(self)
+        font = self.corn.font()
+        font.setPixelSize(12)
+        self.corn.setFont(font)
         self.corn.setStyleSheet(stylesheet)
         self.corn.setAlignment(QtCore.Qt.AlignRight)
         self.corn.setGeometry(206, 343, 60, 18)
@@ -230,6 +250,9 @@ class OjcUi(QMainWindow):
 
         # guac spin box
         self.guac = QSpinBox(self)
+        font = self.guac.font()
+        font.setPixelSize(12)
+        self.guac.setFont(font)
         self.guac.setStyleSheet(stylesheet)
         self.guac.setAlignment(QtCore.Qt.AlignRight)
         self.guac.setGeometry(206, 393, 60, 18)
@@ -249,7 +272,7 @@ class OjcUi(QMainWindow):
         self.brown_onion.setAlignment(QtCore.Qt.AlignRight)
         self.brown_onion.move(344, 192)
         self.brown_onion.setStyleSheet("color: white;"
-                                       "font-size: 16pt;")
+                                       "font-size: 16px;")
 
         # white rice onion results, don't change
         self.white_onion = QtWidgets.QLabel(self)
@@ -260,7 +283,7 @@ class OjcUi(QMainWindow):
         self.white_onion.setAlignment(QtCore.Qt.AlignRight)
         self.white_onion.move(344, 243)
         self.white_onion.setStyleSheet("color: white;"
-                                       "font-size: 16pt;")
+                                       "font-size: 16px;")
 
         # mild salsa onion results
         self.mild_onion = QtWidgets.QLabel(self)
@@ -271,7 +294,7 @@ class OjcUi(QMainWindow):
         self.mild_onion.setAlignment(QtCore.Qt.AlignRight)
         self.mild_onion.move(344, 294)
         self.mild_onion.setStyleSheet("color: white;"
-                                      "font-size: 16pt;")
+                                      "font-size: 16px;")
         # corn salsa onion results
         self.corn_onion = QtWidgets.QLabel(self)
         # initialize to 0 lbs
@@ -281,7 +304,7 @@ class OjcUi(QMainWindow):
         self.corn_onion.setAlignment(QtCore.Qt.AlignRight)
         self.corn_onion.move(344, 345)
         self.corn_onion.setStyleSheet("color: white;"
-                                      "font-size: 16pt;")
+                                      "font-size: 16px;")
 
         # guacamole onion results
         self.guac_onion = QtWidgets.QLabel(self)
@@ -292,7 +315,7 @@ class OjcUi(QMainWindow):
         self.guac_onion.setAlignment(QtCore.Qt.AlignRight)
         self.guac_onion.move(344, 396)
         self.guac_onion.setStyleSheet("color: white;"
-                                      "font-size: 16pt;")
+                                      "font-size: 16px;")
 
     def _create_jalapenos_result_labels(self):
         """Creates, styles, and places jalapenos result labels for needs of each prep item."""
@@ -307,7 +330,7 @@ class OjcUi(QMainWindow):
         self.brown_jal.setAlignment(QtCore.Qt.AlignRight)
         self.brown_jal.move(460, 192)
         self.brown_jal.setStyleSheet("color: white;"
-                                     "font-size: 16pt;")
+                                     "font-size: 16px;")
 
         # white rice jalapeno results, don't change
         self.white_jal = QtWidgets.QLabel(self)
@@ -318,7 +341,7 @@ class OjcUi(QMainWindow):
         self.white_jal.setAlignment(QtCore.Qt.AlignRight)
         self.white_jal.move(460, 243)
         self.white_jal.setStyleSheet("color: white;"
-                                     "font-size: 16pt;")
+                                     "font-size: 16px;")
 
         # mild salsa jalapenos results
         self.mild_jal = QtWidgets.QLabel(self)
@@ -329,7 +352,7 @@ class OjcUi(QMainWindow):
         self.mild_jal.setAlignment(QtCore.Qt.AlignRight)
         self.mild_jal.move(460, 294)
         self.mild_jal.setStyleSheet("color: white;"
-                                    "font-size: 16pt;")
+                                    "font-size: 16px;")
 
         # corn salsa jalapeno results
         self.corn_jal = QtWidgets.QLabel(self)
@@ -340,7 +363,7 @@ class OjcUi(QMainWindow):
         self.corn_jal.setAlignment(QtCore.Qt.AlignRight)
         self.corn_jal.move(460, 345)
         self.corn_jal.setStyleSheet("color: white;"
-                                    "font-size: 16pt;")
+                                    "font-size: 16px;")
 
         # guacamole jalapeno results
         self.guac_jal = QtWidgets.QLabel(self)
@@ -351,7 +374,7 @@ class OjcUi(QMainWindow):
         self.guac_jal.setAlignment(QtCore.Qt.AlignRight)
         self.guac_jal.move(460, 396)
         self.guac_jal.setStyleSheet("color: white;"
-                                    "font-size: 16pt;")
+                                    "font-size: 16px;")
 
     def _create_cilantro_result_labels(self):
         """
@@ -368,7 +391,7 @@ class OjcUi(QMainWindow):
         self.brown_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.brown_cilantro.move(570, 192)
         self.brown_cilantro.setStyleSheet("color: white;"
-                                          "font-size: 16pt;")
+                                          "font-size: 16px;")
 
         # white rice cilantro results
         self.white_cilantro = QtWidgets.QLabel(self)
@@ -379,7 +402,7 @@ class OjcUi(QMainWindow):
         self.white_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.white_cilantro.move(570, 243)
         self.white_cilantro.setStyleSheet("color: white;"
-                                          "font-size: 16pt;")
+                                          "font-size: 16px;")
 
         # mild salsa cilantro results
         self.mild_cilantro = QtWidgets.QLabel(self)
@@ -390,7 +413,7 @@ class OjcUi(QMainWindow):
         self.mild_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.mild_cilantro.move(570, 294)
         self.mild_cilantro.setStyleSheet("color: white;"
-                                         "font-size: 16pt;")
+                                         "font-size: 16px;")
 
         # corn salsa cilantro results
         self.corn_cilantro = QtWidgets.QLabel(self)
@@ -401,7 +424,7 @@ class OjcUi(QMainWindow):
         self.corn_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.corn_cilantro.move(570, 345)
         self.corn_cilantro.setStyleSheet("color: white;"
-                                         "font-size: 16pt;")
+                                         "font-size: 16px;")
 
         # guacamole cilantro results
         self.guac_cilantro = QtWidgets.QLabel(self)
@@ -412,7 +435,7 @@ class OjcUi(QMainWindow):
         self.guac_cilantro.setAlignment(QtCore.Qt.AlignRight)
         self.guac_cilantro.move(570, 396)
         self.guac_cilantro.setStyleSheet("color: white;"
-                                         "font-size: 16pt;")
+                                         "font-size: 16px;")
 
     def _create_total_labels(self):
         """Creates, styles, and places the labels inside of the total box."""
@@ -423,7 +446,7 @@ class OjcUi(QMainWindow):
         onion_total_header = QtWidgets.QLabel(self)
         onion_total_header.setFont(bold)
         onion_total_header.setStyleSheet("color: #AB2218;"
-                                         "font-size:18pt;")
+                                         "font-size:18px;")
         onion_total_header.setAlignment(QtCore.Qt.AlignRight)
         onion_total_header.setText("O N I O N S")
         onion_total_header.adjustSize()
@@ -433,7 +456,7 @@ class OjcUi(QMainWindow):
         jalapenos_total_header = QtWidgets.QLabel(self)
         jalapenos_total_header.setFont(bold)
         jalapenos_total_header.setStyleSheet("color: #AB2218;"
-                                             "font-size: 18pt;")
+                                             "font-size: 18px;")
         jalapenos_total_header.setAlignment(QtCore.Qt.AlignRight)
         jalapenos_total_header.setText("J A L A P E N O S")
         jalapenos_total_header.adjustSize()
@@ -443,7 +466,7 @@ class OjcUi(QMainWindow):
         cilantro_total_header = QtWidgets.QLabel(self)
         cilantro_total_header.setFont(bold)
         cilantro_total_header.setStyleSheet("color: #AB2218;"
-                                            "font-size: 18pt;")
+                                            "font-size: 18px;")
         cilantro_total_header.setAlignment(QtCore.Qt.AlignRight)
         cilantro_total_header.setText("C I L A N T R O")
         cilantro_total_header.adjustSize()
@@ -453,7 +476,7 @@ class OjcUi(QMainWindow):
         self.onion_total = QtWidgets.QLabel(self)
         self.onion_total.setFont(bold)
         self.onion_total.setStyleSheet("color: black;"
-                                       "font-size:50pt;")
+                                       "font-size:50px;")
         self.onion_total.setAlignment(QtCore.Qt.AlignCenter)
         self.onion_total.setText("0.0")
         self.onion_total.setFixedSize(115, 50)
@@ -463,7 +486,7 @@ class OjcUi(QMainWindow):
         self.jalapenos_total = QtWidgets.QLabel(self)
         self.jalapenos_total.setFont(bold)
         self.jalapenos_total.setStyleSheet("color: black;"
-                                           "font-size:50pt;")
+                                           "font-size:50px;")
         self.jalapenos_total.setAlignment(QtCore.Qt.AlignCenter)
         self.jalapenos_total.setFixedSize(115, 50)
         self.jalapenos_total.setText("0.0")
@@ -473,7 +496,7 @@ class OjcUi(QMainWindow):
         self.cilantro_total = QtWidgets.QLabel(self)
         self.cilantro_total.setFont(bold)
         self.cilantro_total.setStyleSheet("color: black;"
-                                          "font-size:50pt;")
+                                          "font-size:50px;")
         self.cilantro_total.setAlignment(QtCore.Qt.AlignCenter)
         self.cilantro_total.setFixedSize(115, 50)
         self.cilantro_total.setText("0.0")
@@ -484,7 +507,7 @@ class OjcUi(QMainWindow):
         onion_lbs = QtWidgets.QLabel(self)
         onion_lbs.setFont(book)
         onion_lbs.setStyleSheet("color: black;"
-                                "font-size: 14pt;")
+                                "font-size: 14px;")
         onion_lbs.setText("p  o  u  n  d  s")
         onion_lbs.adjustSize()
         onion_lbs.move(110, 603)
@@ -493,7 +516,7 @@ class OjcUi(QMainWindow):
         jalapeno_lbs = QtWidgets.QLabel(self)
         jalapeno_lbs.setFont(book)
         jalapeno_lbs.setStyleSheet("color: black;"
-                                   "font-size: 14pt;")
+                                   "font-size: 14px;")
         jalapeno_lbs.setText("p    o    u    n    d    s")
         jalapeno_lbs.adjustSize()
         jalapeno_lbs.move(280, 603)
@@ -502,7 +525,7 @@ class OjcUi(QMainWindow):
         cilantro_lbs = QtWidgets.QLabel(self)
         cilantro_lbs.setFont(book)
         cilantro_lbs.setStyleSheet("color: black;"
-                                   "font-size: 14pt;")
+                                   "font-size: 14px;")
         cilantro_lbs.setText("b       a       g       s")
         cilantro_lbs.adjustSize()
         cilantro_lbs.move(487, 603)
