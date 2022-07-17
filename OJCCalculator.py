@@ -7,7 +7,6 @@
 # Goodbye over-prepping!
 
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtCore import QDir
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSpinBox, QDesktopWidget
 from PyQt5.QtGui import QFontDatabase, QPixmap, QFont
 import PIL.Image as Image
