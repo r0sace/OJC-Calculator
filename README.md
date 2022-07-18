@@ -2,7 +2,7 @@
 
 The OJC Calculator is a tool that combats inaccurate prepping by providing recipe dependent calculations of onions, jalapenos, and cilantro that can be used at any and all Chipotle locations.
 
-<img src="https://im5.ezgif.com/tmp/ezgif-5-c07ef3d1ea.gif" alt="OJC" />
+<p align="center"><img src="https://im5.ezgif.com/tmp/ezgif-5-c07ef3d1ea.gif" alt="OJC" />
 
 
 
