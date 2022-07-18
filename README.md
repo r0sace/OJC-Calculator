@@ -18,8 +18,6 @@ Both macOS and Windows versions are available for download in releases.
  * PyQT
  * PyInstaller
  * GitHub for version control
- 
- * This project uses OOP as its programming paradigm. 
 
 # About the Project
 The OJC Calculator is a passion project I created while working at Chipotle Mexican Grill. 
