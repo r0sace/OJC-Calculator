@@ -1,6 +1,6 @@
 # Onions, Jalapenos, Cilantro Calculator
 
-The OJC Calculator is a tool that combats inaccurate prepping by providing recipe dependent calculations of onions, jalapenos, and cilantro that can be used at any and all Chipotle locations.
+The OJC Calculator is a tool that combats inaccurate prepping by providing recipe dependent calculations of onions, jalapenos, and cilantro that can be used at any and all Chipotle locations. You can access this app by downloaded the executables in the repo's releases.
 
 <img src="https://im3.ezgif.com/tmp/ezgif-3-72822f3bf9.gif" alt="OJC" />
 
@@ -12,6 +12,16 @@ Each morning we are tasked with dicing fresh onions, jalapenos, and cilantro to 
 The previous system we used to calculate OJC needs relied on two factors: 1) your restaurant has nearly perfect inventory and usage counts and 2) you are opening with no held-overnight prep items. These scenarios are certainly _not impossible_ but are an exception rather than the rule. So why is this the way in which each restaurant's numbers are being generated? Why are the OJC needs different across stores even when they are prepping identical amounts of salsa, rice, or guacamole? Thus the idea of the OJC Calculator was born! 
 
 Rather than relying on the restaurant dependent factors our previous system used, the OJC Calculator combats inaccurate prepping by basing its calculations on the universal Chipotle recipes. The OJC Calculator can be used at any and all Chipotle locations.
+ 
+ # What It Does
+ The OJC Calculator allows users to input the needs of each prep item. It then calculates the total amount of onions, jalapenos, and cilantro required for each ingredient.
+ 
+ # How I Built It
+ * Python
+ * PyQT
+ * PyInstaller
+ * Various Python modules
+ * GitHub for version control
  
  # Challenges
  * Gathering Data & Creating a Standard Equation
@@ -26,3 +36,9 @@ Rather than relying on the restaurant dependent factors our previous system used
      * After brainstorming, the idea of including a break down of how much OJC is being used in each item came about. Not only would it fill in the gaps of my pretty bare and boring looking app, but it would also give an additional functionality to the app and help to demystify where the total is coming from.
      * I also did not implement any of the GUI using PyDesigner or a layout, instead it is all hard-coded. This caused a lot of headache during packaging. 
 
+* Packaging 
+     * This was the first project I have ever packaged into an executable.
+     * For some time my pictures and fonts were not being included into my executables, which made my app look pretty crazy, especially when running on Windows.
+ <img src="https://i.ibb.co/bQ3HgxC/Screen-Shot-2022-07-18-at-2-16-38-PM.png"/>
+     * I ended up doing some weird stuff using base64 to include my pictures and figured out a way to get my custom font loaded into a database that would be included in the package.
+     * I also packaged this on a Mac which created a Mac file when it is suposed to be for Chipotle's computers, which run on Windows. I hopped on a virtual desktop and packaged it up for Windows. Now, I have the executables for both, which is pretty neat. 
