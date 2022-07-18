@@ -48,7 +48,7 @@ Rather than relying on the restaurant dependent factors our previous system used
      * I did some research on custom fonts and how to include them into the directory because the PyInstaller docs are outdated. I found that importing resources required a function to find the absolute path to the resource in the temporary folder that PyInstaller creates when packaging up the project. After including this piece of code, my font databases were imported and this fixed most of my scalability and cross-platform issues.
      * I packaged this on a Mac which created a Mac file when it is suposed to be for Chipotle's computers, which run on Windows. I hopped on a virtual desktop and packaged it up for Windows. Now, I have the executables for both, which is pretty neat. 
      
- * What's Next?
- I am very happy with the way my OJC Calculator came out and the results it has provided to my store. As far as the code goes, I would love to fix up the GUI and scrap the hard-coding design elements I did and position everything within a layout. My plan is to keep this thing updated to reflect any new items the company may roll out. 
+# What's Next?
+ I am very happy with the way my OJC Calculator came out and the results I have seen in using it at my store. As far as the code goes, I would love to fix up the GUI and scrap the hard-coding design elements I did and position everything within a layout. My plan is to keep this thing updated to reflect any new items the company may roll out. 
  
  Thanks for reading!
