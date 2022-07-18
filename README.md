@@ -1,10 +1,10 @@
-# Onions, Jalapenos, Cilantro Calculator
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-
-[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)[![macOS](https://svgshare.com/i/ZjP.svg)](https://svgshare.com/i/ZjP.svg)
+# <p align="center">Onions, Jalapenos, Cilantro Calculator</p><p align="center"><img src="http://ForTheBadge.com/images/badges/made-with-python.svg" /></p>
 
 
-The OJC Calculator is a tool that combats inaccurate prepping by providing recipe dependent calculations of onions, jalapenos, and cilantro that can be used at any and all Chipotle locations. You can access this app by downloaded the executables in the repo's releases.
+
+The OJC Calculator is a tool that combats inaccurate prepping by providing recipe dependent calculations of onions, jalapenos, and cilantro that can be used at any and all Chipotle locations. 
+
+Both macOS and Windows versions are available for download in releases.
 
 <img src="https://im3.ezgif.com/tmp/ezgif-3-72822f3bf9.gif" alt="OJC" />
 
