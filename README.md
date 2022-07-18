@@ -53,4 +53,4 @@ Rather than relying on the restaurant dependent factors our previous system used
      * I packaged this on a Mac which created a Mac file when it is suposed to be for Chipotle's computers, which run on Windows. I hopped on a virtual desktop and packaged it up for Windows. Now, I have the executables for both, which is pretty neat. 
      
 # What's Next?
- I am very happy with the way my OJC Calculator came out and the results I have seen in using it at my store. As far as the code goes, I would love to fix up the GUI and scrap the hard-coding design elements I did and position everything within a layout. My plan is to keep this thing updated to reflect any new items the company may roll out. 
+ I am very happy with the way my OJC Calculator came out and the results I have seen in using it at my store. As far as the code goes, I would love to fix up the GUI and scrap the hard-coding design elements I did and position everything within a layout. My plan is to keep this thing updated to reflect any new items the company may roll out that requires diced OJC.
