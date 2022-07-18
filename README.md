@@ -6,7 +6,7 @@ The OJC Calculator is a tool that combats inaccurate prepping by providing recip
 
 Both macOS and Windows versions are available for download in releases.
 
-<img src="https://im3.ezgif.com/tmp/ezgif-3-72822f3bf9.gif" alt="OJC" />
+<img src="https://ibb.co/M9xct2y" alt="OJC" />
 <p align="center"><img src="http://ForTheBadge.com/images/badges/made-with-python.svg" /></p>
 
  
