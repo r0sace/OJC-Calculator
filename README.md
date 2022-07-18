@@ -50,5 +50,3 @@ Rather than relying on the restaurant dependent factors our previous system used
      
 # What's Next?
  I am very happy with the way my OJC Calculator came out and the results I have seen in using it at my store. As far as the code goes, I would love to fix up the GUI and scrap the hard-coding design elements I did and position everything within a layout. My plan is to keep this thing updated to reflect any new items the company may roll out. 
- 
- Thanks for reading!
