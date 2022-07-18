@@ -2,7 +2,7 @@
 
 The OJC Calculator is a tool that combats inaccurate prepping by providing recipe dependent calculations of onions, jalapenos, and cilantro that can be used at any and all Chipotle locations.
 
-<p align="center"><img src="https://im5.ezgif.com/tmp/ezgif-5-c07ef3d1ea.gif" alt="OJC" />
+<img src="https://im3.ezgif.com/tmp/ezgif-3-06679c1df8.gif" alt="OJC" />
 
 
 
@@ -16,4 +16,6 @@ Each morning we are tasked with dicing fresh onions, jalapenos, and cilantro to 
 The previous system we used to calculate OJC needs relied on two factors: 1) your restaurant has nearly perfect inventory and usage counts and 2) you are opening with no held-overnight prep items. These scenarios are certainly _not impossible_ but are an exception rather than the rule. So why is this the way in which each restaurant's numbers are being generated? Why are the OJC needs different across stores even when they are prepping identical amounts of salsa, rice, or guacamole? Thus the idea of the OJC Calculator was born! 
 
 Rather than relying on the restaurant dependent factors our previous system used, the OJC Calculator combats inaccurate prepping by basing its calculations on the universal Chipotle recipes. The OJC Calculator can be used at any and all Chipotle locations.
+ 
+ # 
 
