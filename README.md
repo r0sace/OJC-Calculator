@@ -14,8 +14,10 @@ The previous system we used to calculate OJC needs relied on two factors: 1) you
 Rather than relying on the restaurant dependent factors our previous system used, the OJC Calculator combats inaccurate prepping by basing its calculations on the universal Chipotle recipes. The OJC Calculator can be used at any and all Chipotle locations.
  
  # Challenges
- * Gathering Data
-      * In order to calculate the correct amounts of OJC for each ingredient, I needed to do a bit of investigating. The recipes for rices, salsas, and guac use OJC by the cup but our needs is given in pounds and bags. I had to gather the average weight of a cup of each ingredient and convert the ingredients in the recipes to oz, then to pounds for prep teams to use.
+ * Gathering Data & Ensuring Proper Calculations
+      * I needed to figure out a way to convert the recipes from cups of OJC to oz of OJC
+      * After weighing out each ingredient, it was necessary to test and find a sweet-spot average weight of each cup that would never result in underprepping, but could result in very slight overprep for worst case scenarios
+      * After many trial runs, I landed on a few magic numbers and converted our recipe's cup unit into oz units per item and turned this into an equation for each item, depending on the needs entered into the OJC.
  * Designing a GUI
      * I spent a lot of time figuring out a design that would be aesthetically pleasing while also optimally organizing the information it provided. 
 
