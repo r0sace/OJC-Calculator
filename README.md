@@ -14,6 +14,10 @@ Both macOS and Windows versions are available for download in releases.
  The OJC Calculator accurately calculates how many onions, jalapenos, and cilantro are required for the needs of each prep item as entered by the user. The OJC Calculator gives a breakdown of the amount of OJC in each item and gives the total amount needed. Say goodbye to inaccurate prepping!
  
  # How I Built It
+ The OJC Calculator is built using the OOP paradigm and MVC design pattern.
+ 
+ I used the following technologies:
+ 
  * Python 3
  * PyQT5
  * PyInstaller
