@@ -17,7 +17,7 @@ Rather than relying on the restaurant dependent factors our previous system used
  * Gathering Data & Ensuring Proper Calculations
       * I needed to figure out a way to convert the recipes from cups of OJC to oz of OJC
       * After weighing out each ingredient, it was necessary to test and find a sweet-spot average weight of each cup that would never result in underprepping, but could result in very slight overprep for worst case scenarios
-      * After many trial runs, I landed on a few magic numbers and converted our recipe's cup unit into oz units per item and turned this into an equation for each item, depending on the needs entered into the OJC.
+      * After many trial runs, I landed on a few magic numbers and converted our recipe's cup unit into oz units per item. I then turned each recipe into an equation that would calculate the amount of OJC depending on the needs of that ingredient.
  * Designing a GUI
      * I spent a lot of time figuring out a design that would be aesthetically pleasing while also optimally organizing the information it provided. 
 
