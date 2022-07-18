@@ -42,7 +42,6 @@ Rather than relying on the restaurant dependent factors our previous system used
 
 * Packaging 
      * This was the first project I have ever packaged into an executable.
-     * For some time my pictures and fonts were not being included into my executables, which made my app look pretty crazy, especially when running on Windows.
-     * <img src="https://i.ibb.co/bQ3HgxC/Screen-Shot-2022-07-18-at-2-16-38-PM.png"/>
-     * I ended up doing some weird stuff using base64 to include my pictures and figured out a way to get my custom font loaded into a database that would be included in the package.
-     * I also packaged this on a Mac which created a Mac file when it is suposed to be for Chipotle's computers, which run on Windows. I hopped on a virtual desktop and packaged it up for Windows. Now, I have the executables for both, which is pretty neat. 
+     * For some time my pictures and fonts were not being included into my executables, which made my app look pretty crazy, especially when running on Windows. <img src="https://www.simpleimageresizer.com/_uploads/photos/cc516b08/Screen_Shot_2022-07-18_at_2.16.38_PM_2_36.png"/>
+     * I ended up learning how to use base64 to ensure that my pictures would be included in my executables. I also figured out a way to get my custom font loaded into a database that would be included in the package.
+     * I packaged this on a Mac which created a Mac file when it is suposed to be for Chipotle's computers, which run on Windows. I hopped on a virtual desktop and packaged it up for Windows. Now, I have the executables for both, which is pretty neat. 
