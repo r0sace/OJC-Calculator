@@ -1,4 +1,4 @@
-# Onions, Jalapenos, Cilantro Calculator
+# <p align="center">Onions, Jalapenos, Cilantro Calculator </p>
 
 
 
