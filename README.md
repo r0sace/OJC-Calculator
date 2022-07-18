@@ -38,11 +38,17 @@ Rather than relying on the restaurant dependent factors our previous system used
  * Designing a GUI 
      * I have never designed a Python GUI before, so naturally there was a learning curve in implementing PyQT. I pretty much self-taught through some Youtube tutorials and a few helpful articles. Things like importing custom fonts, spacing, widget design, and images gave me the most trouble.
      * Organizing the information was another challenging aspect of the GUI. I wanted to present the information in an aesthetically pleasing yet organized way, but often found myself with an app that looked too bare - prep item, needs and a total.
-     * After brainstorming, the idea of including a break down of how much OJC is being used in each item came about. Not only would it fill in the gaps of my pretty bare and boring looking app, but it would also give an additional functionality to the app and help to demystify where the total is coming from.
-     * I also did not implement any of the GUI using PyDesigner or a layout, instead it is all hard-coded. This caused a lot of headache during packaging. 
+     * After brainstorming, the idea of including a break down of how much OJC is being used in each item came about. Not only would it fill in the gaps of my pretty bare and boring looking app, but it would also give an additional functionality to the app and help to demystify where the calculations are coming from.
+     * I also did not use PyDesigner or a layout, instead it is all hard-coded. This caused a lot of headache during packaging. I now know the importance of layouts when it comes to scalability.
 
 * Packaging 
      * This was the first project I have ever packaged into an executable.
      * For some time my pictures and fonts were not being included into my executables, which made my app look pretty crazy, especially when running on Windows. <img src="https://www.simpleimageresizer.com/_uploads/photos/cc516b08/Screen_Shot_2022-07-18_at_2.16.38_PM_2_36.png"/>
-     * I ended up learning how to use base64 to ensure that my pictures would be included in my executables. I also figured out a way to get my custom font loaded into a database that would be included in the package.
+     * I learned how to use base64 to ensure that my pictures would be included in my executables by converting my pictures to strings. This was probably the most interesting thing I learned while working on this project.
+     * I did some research on custom fonts and how to include them into the directory because the PyInstaller docs are outdated. I found that importing resources required a function to find the absolute path to the resource in the temporary folder that PyInstaller creates when packaging up the project. After including this piece of code, my font databases were imported and this fixed most of my scalability and cross-platform issues.
      * I packaged this on a Mac which created a Mac file when it is suposed to be for Chipotle's computers, which run on Windows. I hopped on a virtual desktop and packaged it up for Windows. Now, I have the executables for both, which is pretty neat. 
+     
+ * What's Next?
+ I am very happy with the way my OJC Calculator came out and the results it has provided to my store. As far as the code goes, I would love to fix up the GUI and scrap the hard-coding design elements I did and position everything within a layout. My plan is to keep this thing updated to reflect any new items the company may roll out. 
+ 
+ Thanks for reading!
