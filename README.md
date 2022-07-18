@@ -2,11 +2,7 @@
 
 The OJC Calculator is a tool that combats inaccurate prepping by providing recipe dependent calculations of onions, jalapenos, and cilantro that can be used at any and all Chipotle locations.
 
-<img src="https://im3.ezgif.com/tmp/ezgif-3-06679c1df8.gif" alt="OJC" />
-
-
-
- 
+<img src="https://im3.ezgif.com/tmp/ezgif-3-72822f3bf9.gif" alt="OJC" />
 
 # About the Project
 The OJC Calculator is a passion project I created while working at Chipotle Mexican Grill. 
@@ -17,5 +13,9 @@ The previous system we used to calculate OJC needs relied on two factors: 1) you
 
 Rather than relying on the restaurant dependent factors our previous system used, the OJC Calculator combats inaccurate prepping by basing its calculations on the universal Chipotle recipes. The OJC Calculator can be used at any and all Chipotle locations.
  
- # 
+ # Challenges
+ * Gathering Data
+      * In order to calculate the correct amounts of OJC for each ingredient, I needed to do a bit of investigating. The recipes for rices, salsas, and guac use OJC by the cup but our needs is given in pounds and bags. I had to gather the average weight of a cup of each ingredient and convert the ingredients in the recipes to oz, then to pounds for prep teams to use.
+ * Designing a GUI
+     * I spent a lot of time figuring out a design that would be aesthetically pleasing while also optimally organizing the information it provided. 
 
