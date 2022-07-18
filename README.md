@@ -20,6 +20,8 @@ Rather than relying on the restaurant dependent factors our previous system used
       * After many trial runs, I got my numbers and converted our recipes from cups to oz.
       * I then turned each recipe into an equation that factored in the needs of salsas, guac, and rices to calculate the OJC usage directly.
       
- * Designing a GUI
-     * I spent a lot of time figuring out a design that would be aesthetically pleasing while also optimally organizing the information it provided. 
+ * Designing a GUI 
+     * I have never designed a Python GUI before, so naturally there was a learning curve in implementing PyQT. I pretty much self-taught through some Youtube tutorials and a few helpful articles. Things like importing custom fonts, spacing, widget design, and images gave me the most trouble.
+     * Organizing the infromation was another challening aspect of the GUI. I wanted to present the information in an aesthetically pleasing yet organized way, but often found myself with an app that looked too bare - prep item, needs and a total.
+     * After brainstorming, the idea of including a break down of how much OJC is being used in each item came about. Not only would it fill in the gaps of my pretty bare and boring looking app, but it would also give an additional functionality to the app and help to demystify where the total is coming from. 
 
