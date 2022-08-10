@@ -47,7 +47,7 @@ Rather than relying on the restaurant dependent factors our previous system used
 
 * Packaging 
      * This was the first project I have ever packaged into an executable.
-     * For some time my pictures and fonts were not being included into my executables, which made my app look pretty crazy, especially when running on Windows. <img src="https://www.simpleimageresizer.com/_uploads/photos/cc516b08/Screen_Shot_2022-07-18_at_2.16.38_PM_2_36.png"/>
+     * For some time my pictures and fonts were not being included into my executables, which made my app look pretty crazy, especially when running on Windows. 
      * I learned how to use base64 to ensure that my pictures would be included in my executables by converting my pictures to strings. This was probably the most interesting thing I learned while working on this project.
      * I did some research on custom fonts and how to include them into the directory because the PyInstaller docs are outdated. I found that importing resources required a function to find the absolute path to the resource in the temporary folder that PyInstaller creates when packaging up the project. After including this piece of code, my font databases were imported and this fixed most of my scalability and cross-platform issues.
      * I packaged this on a Mac which created a Mac file when it is suposed to be for Chipotle's computers, which run on Windows. I hopped on a virtual desktop and packaged it up for Windows. Now, I have the executables for both, which is pretty neat. 
